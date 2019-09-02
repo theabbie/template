@@ -9,7 +9,7 @@ axios("https://raw.githubusercontent.com/theabbie/awto/gh-pages/files/"+req.head
 res.end(x.data);
 }).catch(function(y) {
 res.status(404).end("404");
-});
-});
+})
+})
 
 app.listen(process.env.PORT);
