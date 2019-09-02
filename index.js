@@ -1,10 +1,13 @@
 var app = require('express')();
 var store = require('data-store');
+var axios = require('axios');
 var db = new store({path: '/tmp/data.json'});
 
 app.get("/*", function(req,res) {
 res.setHeader("content-type","text/html");
-res.end(`<body bgcolor="${req.headers.host.split(".")[0]}"></body>`)
+axios("https://raw.githubusercontent.com/theabbie/awto/gh-pages/files/"+req.headers.host.split(".")[0]+".html").then(function(x) {
+res.end(x.data);
+})
 });
 
 app.listen(process.env.PORT);
