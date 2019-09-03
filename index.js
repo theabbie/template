@@ -12,6 +12,6 @@ res.end("hi")
 else {
 res.status(404).end("404");
 }
-});
+})
 
 app.listen(process.env.PORT);
