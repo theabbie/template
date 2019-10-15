@@ -21,7 +21,7 @@ imaps.connect(config).then(function (connection) {
             bodies: ['HEADER', 'TEXT', ''],
         };
         return connection.search(searchCriteria, fetchOptions).then(function (messages) {
-            console.log(messages)
+            res.json(messages)
             });
         });
     });
